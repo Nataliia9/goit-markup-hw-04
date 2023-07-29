@@ -370,7 +370,7 @@ img {
 }
 
 .team-social-icon {
-fill: var(--cloud);
+  fill: var(--light, #f4f4fd);
 }
 
 .customers {
@@ -395,20 +395,23 @@ fill: var(--cloud);
   fill: var(--subtle-text);
   border-radius: 4px;
   border: 1px solid var(--subtle-text);
-  transition-property: fill, border;
-  transition-duration: 300ms, 250ms;
-  transition-delay: 300ms;
-  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1), ease;
+  color: var(--subtle-text);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.customers-item {
+  width: calc((100% - 120px) / 6);
+  height: 88px;
+}
 .customers-icon {
-/* fill: currentColor; */
+  /* fill: currentColor;  */
 }
 
 .customers-link:hover,
 .customers-link:focus {
+  border-color: var(--pressed-state);
   fill: var(--pressed-state);
-  border: 1px solid var(--pressed-state);
 }
 
 .footer {
@@ -431,7 +434,7 @@ fill: var(--cloud);
   align-items: center;
   justify-content: center;
   padding: 8px;
-   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:hover {
@@ -443,7 +446,7 @@ fill: var(--cloud);
 }
 
 .social-icon {
-  fill: var(--cloud);
+  fill: var(--light);
 }
 
 .footer-wrap {
@@ -504,7 +507,10 @@ fill: var(--cloud);
   letter-spacing: 0.04em;
   cursor: pointer;
   padding: 12px 24px;
-   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portf-filtr-btn:hover,
@@ -512,7 +518,8 @@ fill: var(--cloud);
   color: var(--white-background);
   background-color: var(--pressed-state);
   border: 1px solid transparent;
-   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12); 
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portf-list {
@@ -528,7 +535,13 @@ fill: var(--cloud);
   align-items: flex-start;
   background: var(--white-background);
   width: calc((100% - 2 * 24px) / 3);
-   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* ---------------changes------------- */
+.portf-item:hover,
+.portf-item:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); 
+
 }
 
 .portf-underimg-text {
@@ -560,7 +573,8 @@ fill: var(--cloud);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portf-link:hover .portf-cover {
+.portf-link:hover .portf-cover,
+ .portf-link:focus .portf-cover {
   transform: translateY(0%);
 }
 
@@ -570,7 +584,8 @@ fill: var(--cloud);
   height: 100%;
   background-color: var(--navyblue-modal, rgba(46, 47, 66, 0.4));
   top: 0;
-   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -584,7 +599,7 @@ fill: var(--cloud);
   background-color: var(--modal-background, #fcfcfc);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .modal {
@@ -605,18 +620,19 @@ fill: var(--cloud);
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-x-icon {
   fill: var(--dark);
-   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: var(--pressed-state);
-  border: none; 
+  border: none;
 }
 
 .modal-close-btn:hover .close-x-icon,
