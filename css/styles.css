@@ -75,6 +75,9 @@ img {
   border-bottom: 1px solid var(--accent);
   background: var(--white-background);
   padding: 25px 0;
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .header-navigation {
@@ -174,7 +177,7 @@ img {
   background-position: center;
   background-size: cover;
   height: 600px;
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   padding-top: 188px;
   padding-right: auto;
@@ -214,7 +217,9 @@ img {
   transition-property: color, background-color;
   transition-duration: 300ms, 250ms;
   transition-delay: 300ms;
-  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1), ease;
+  /* transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1), ease;  */
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -245,10 +250,11 @@ img {
   height: 112px;
   border-radius: 4px;
   background: var(--light);
+  margin-bottom: 8px;
 }
 
 .advantages-title {
-  margin: 8px 0;
+  margin-bottom: 8px;
 }
 
 .section-title {
@@ -352,15 +358,19 @@ img {
   align-items: center;
   justify-content: center;
   padding: 12px;
-  transition-property: background-color;
-  transition-duration: 300ms;
-  transition-delay: 300ms;
-  transition-timing-function: ease;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-soc-link:hover,
+.team-soc-link:hover {
+  background-color: var(--pressed-state);
+}
+
 .team-soc-link:focus {
   background-color: var(--pressed-state);
+}
+
+.team-social-icon {
+fill: var(--cloud);
 }
 
 .customers {
@@ -391,6 +401,10 @@ img {
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1), ease;
 }
 
+.customers-icon {
+/* fill: currentColor; */
+}
+
 .customers-link:hover,
 .customers-link:focus {
   fill: var(--pressed-state);
@@ -409,28 +423,33 @@ img {
 }
 
 .footer-soc-link {
-  width: 100%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   background-color: var(--primary-brand);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-delay: 300ms;
-  transition-timing-function: ease;
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-soc-link:hover,
+.footer-soc-link:hover {
+  background-color: var(--success);
+}
+
 .footer-soc-link:focus {
   background-color: var(--success);
+}
+
+.social-icon {
+  fill: var(--cloud);
 }
 
 .footer-wrap {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 .footer-link {
@@ -453,7 +472,6 @@ img {
   color: var(--white-background);
   font-family: Roboto;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -486,10 +504,7 @@ img {
   letter-spacing: 0.04em;
   cursor: pointer;
   padding: 12px 24px;
-  transition-property: color, background-color;
-  transition-duration: 300ms, 250ms;
-  transition-delay: 300ms;
-  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1), ease;
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portf-filtr-btn:hover,
@@ -497,6 +512,7 @@ img {
   color: var(--white-background);
   background-color: var(--pressed-state);
   border: 1px solid transparent;
+   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12); 
 }
 
 .portf-list {
@@ -512,7 +528,7 @@ img {
   align-items: flex-start;
   background: var(--white-background);
   width: calc((100% - 2 * 24px) / 3);
-
+   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portf-underimg-text {
@@ -541,33 +557,34 @@ img {
   height: 100%;
   padding: 40px 32px 164px;
   transform: translateY(100%);
-  transition: transform 300ms linear;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portf-link:hover .portf-cover {
-  transform: translateY(0);
+  transform: translateY(0%);
 }
 
 .backdrop {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: var(--navyblue-modal, rgba(46, 47, 66, 0.40));
+  background-color: var(--navyblue-modal, rgba(46, 47, 66, 0.4));
   top: 0;
-  transition: opacity 300ms linear,visibility 300ms linear;
+   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
   position: absolute;
-  top: 372px;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   width: 408px;
   min-height: 584px;
   border-radius: 4px;
-background-color: var(--modal-background, #FCFCFC);
-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-transition: transform 300ms linear;
+  background-color: var(--modal-background, #fcfcfc);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .backdrop.is-hidden .modal {
@@ -578,22 +595,28 @@ transition: transform 300ms linear;
   position: absolute;
   top: 24px;
   right: 24px;
+  width: 24px;
+  height: 24px;
   background-color: var(--accent);
-border: 1px solid  rgba(0, 0, 0, 0.10);
-border-radius: 50%;
-padding: 8px 8px 8px 8px;
-display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-x-icon {
   fill: var(--dark);
+   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-background-color: var(--pressed-state);
+  background-color: var(--pressed-state);
+  border: none; 
 }
 
 .modal-close-btn:hover .close-x-icon,
