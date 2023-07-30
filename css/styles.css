@@ -402,17 +402,19 @@ img {
 }
 
 .customers-item {
+
   width: calc((100% - 120px) / 6);
   height: 88px;
 }
 .customers-icon {
-  /* fill: currentColor;  */
+  fill: currentColor; 
 }
 
 .customers-link:hover,
 .customers-link:focus {
   border-color: var(--pressed-state);
   fill: var(--pressed-state);
+  color: var(--pressed-state);
 }
 
 .footer {
